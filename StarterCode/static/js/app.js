@@ -25,17 +25,15 @@ var tablerows = (tabledata) => {
 
 tablerows(tabledata);
 
-
-// create a clickable search button
 button_search.on("click", () => {
 	d3.event.preventDefault();
 	
     var searched_date = search_date.property("value");
 	
-	// 2. Filter the data
+	
     var filtered_tabledata = tabledata.filter(tabledata => tabledata.datetime === searched_date);
 	
-	// 3. Load the new data
+	
 	if(filtered_tabledata.length !== 0) {
 		tablerows(filtered_tabledata);
 	}
@@ -48,11 +46,10 @@ button_search.on("click", () => {
 })
  
 button_reset.on("click", () => {
-	// window.location.href = "index.html";
 	document.getElementById("searchDate").value='';
 	
-	// Load original dataset
+	// reload original dataset
 	tablerows(tabledata);
 })
 
-// YOUR CODE HERE!
+
